@@ -13,7 +13,11 @@ class Elevator {
    }
   _passengersEnter() { }
   _passengersLeave() { }
-  floorUp() { }
+  floorUp() {
+    if ((this.floor + 1) < this.MAXFLOOR) {
+        this.floor += 1;
+      } else console.log("THERE'S NO 11 FLOOR");
+    }
   floorDown() { }
   call() { }
   log() {
