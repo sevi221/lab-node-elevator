@@ -5,11 +5,11 @@ class Elevator {
     this.MAXFLOOR   = 10;
     this.requests   = [];
   }
-
-  start() { }
+  start() {
+   setInterval(() => this.update(), 1000); }
   stop() { }
   update() {
-    this.log()
+    this.log();
    }
   _passengersEnter() { }
   _passengersLeave() { }
@@ -18,7 +18,12 @@ class Elevator {
         this.floor += 1;
       } else console.log("THERE'S NO 11 FLOOR");
     }
-  floorDown() { }
+  floorDown() {
+    if (this.floor - 1 < 0) console.log("YOU'RE IN THE BASEMENT FLOOR");
+  }else {
+        this.floor -= 1;
+      };
+
   call() { }
   log() {
     console.log(`Direction: ${this.direction} | Floor: ${this.floor}`);
